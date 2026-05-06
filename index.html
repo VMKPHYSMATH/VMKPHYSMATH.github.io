@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinayak M. Kulkarni — Theoretical Physicist</title>
+  <meta name="description" content="Academic portfolio of Vinayak M. Kulkarni, PhD — theoretical physicist specialising in non-Hermitian quantum mechanics, exceptional points, Kondo physics, and renormalization group methods." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --accent: #1A3A5C;
+      --accent2: #2E6DA4;
+      --accent-light: #e8f0f8;
+      --text: #1a1a1a;
+      --text2: #555;
+      --text3: #888;
+      --bg: #ffffff;
+      --bg2: #f7f7f5;
+      --line: #e2e2de;
+      --green: #1a6b42;
+      --green-bg: #eaf5ee;
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e8e8e2;
+        --text2: #a8a8a0;
+        --text3: #6e6e68;
+        --bg: #111110;
+        --bg2: #1c1c1a;
+        --line: #2e2e2a;
+        --accent-light: #1a2a3a;
+        --green-bg: #0e2a1a;
+        --green: #4ade80;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 2rem;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-name:hover { text-decoration: none; }
+    .nav-links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+    .nav-links a {
+      font-size: 12px;
+      color: var(--text2);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* SECTIONS */
+    section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    section + section { border-top: 1px solid var(--line); }
+
+    h2.section-title {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2.5rem;
+      align-items: start;
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+    @media (max-width: 560px) {
+      .hero { grid-template-columns: 1fr; }
+      .avatar { display: none; }
+    }
+    .hero-text .position {
+      font-size: 12.5px;
+      color: var(--text3);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+    .hero-text h1 em { font-style: italic; color: var(--text2); }
+    .verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text3);
+      margin-bottom: 0.9rem;
+    }
+    .verified .fa-circle-check { color: var(--accent2); font-size: 13px; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1rem; }
+    .badge {
+      font-size: 11.5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      color: var(--text2);
+      background: var(--bg2);
+    }
+    .hero-text p {
+      font-size: 14.5px;
+      color: var(--text2);
+      line-height: 1.85;
+      max-width: 530px;
+      margin-bottom: 1.1rem;
+    }
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 13px;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .availability::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+    .hero-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      padding: 7px 14px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: transparent;
+      cursor: pointer;
+      font-family: var(--sans);
+      color: var(--text);
+      text-decoration: none;
+    }
+    .btn:hover { background: var(--bg2); text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: #2a527a; color: #fff; }
+    .avatar {
+      width: 112px; height: 112px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 32px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    /* METRICS */
+    .metrics { display: flex; gap: 0.9rem; margin-bottom: 2.2rem; flex-wrap: wrap; }
+    .metric {
+      background: var(--bg2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1.3rem;
+      min-width: 110px;
+      text-align: center;
+    }
+    .metric .val {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .metric .lbl {
+      font-size: 11px;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    /* COLLABORATORS */
+    .coauthor-grid { display: flex; flex-direction: column; gap: 0.65rem; }
+    .coauthor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg2);
+    }
+    .ca-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .ca-name { font-size: 14px; font-weight: 500; }
+    .ca-role { font-size: 12px; color: var(--text2); line-height: 1.4; }
+
+    /* RESEARCH */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+    .rcard {
+      background: var(--bg2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+    }
+    .rcard .icon { font-size: 18px; color: var(--accent2); margin-bottom: 0.5rem; }
+    .rcard h3 { font-size: 13.5px; font-weight: 500; margin-bottom: 0.35rem; }
+    .rcard p { font-size: 12.5px; color: var(--text2); line-height: 1.65; }
+
+    /* PUBLICATIONS */
+    .pub-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .pub {
+      border-left: 2px solid var(--line);
+      padding: 0.1rem 0 0.1rem 1rem;
+      transition: border-color 0.15s;
+    }
+    .pub:hover { border-left-color: var(--accent2); }
+    .pub .journal {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--accent2);
+      margin-bottom: 0.2rem;
+    }
+    .pub h3 { font-size: 14px; font-weight: 500; line-height: 1.5; margin-bottom: 0.25rem; }
+    .pub .meta { font-size: 12.5px; color: var(--text2); }
+    .pub .pub-foot {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .pub .links a { font-size: 12px; color: var(--accent2); }
+    .cite-badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: var(--bg2);
+      border: 1px solid var(--line);
+      color: var(--text3);
+    }
+
+    /* EDUCATION */
+    .edu-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .edu { display: grid; grid-template-columns: 90px 1fr; gap: 0 1rem; }
+    @media (max-width: 480px) { .edu { grid-template-columns: 1fr; } }
+    .edu-year { font-size: 12px; color: var(--text3); padding-top: 2px; }
+    .edu-body h3 { font-size: 14px; font-weight: 500; line-height: 1.4; }
+    .edu-body p { font-size: 13px; color: var(--text2); line-height: 1.55; }
+
+    /* AWARDS */
+    .award-list { display: flex; flex-direction: column; gap: 0.55rem; }
+    .award { display: flex; gap: 1rem; align-items: baseline; }
+    .award-year { font-size: 12px; color: var(--text3); min-width: 55px; flex-shrink: 0; }
+    .award-text { font-size: 13.5px; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 500px) { .skills-grid { grid-template-columns: 1fr; } }
+    .skill-group h3 {
+      font-size: 11.5px;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 5px;
+      background: var(--bg2);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    /* CONFERENCES */
+    .conf-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .conf { display: flex; gap: 1rem; align-items: baseline; }
+    .conf-year { font-size: 12px; color: var(--text3); min-width: 85px; flex-shrink: 0; }
+    .conf-text { font-size: 13.5px; line-height: 1.55; }
+
+    /* NEWS */
+    .news-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .news-item { display: flex; gap: 1rem; align-items: baseline; }
+    .news-date { font-size: 12px; color: var(--text3); min-width: 80px; flex-shrink: 0; }
+    .news-text { font-size: 13.5px; line-height: 1.6; }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+    .ccard {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg2);
+    }
+    .ccard .icon-wrap { font-size: 17px; color: var(--accent2); flex-shrink: 0; width: 20px; text-align: center; }
+    .ccard .label { font-size: 10.5px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; }
+    .ccard .value { font-size: 13px; font-weight: 500; word-break: break-all; }
+
+    /* REFERENCES */
+    .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+    .ref-card {
+      background: var(--bg2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.15rem;
+    }
+    .ref-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 0.25rem; }
+    .ref-card .ref-role { font-size: 12.5px; color: var(--text2); line-height: 1.55; margin-bottom: 0.5rem; }
+    .ref-card a { font-size: 12px; color: var(--accent2); }
+
+    footer {
+      text-align: center;
+      padding: 1.8rem 2rem;
+      font-size: 12px;
+      color: var(--text3);
+      border-top: 1px solid var(--line);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#about" class="nav-name">Vinayak M. Kulkarni</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#conferences">Conferences</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO / ABOUT -->
+<section id="about" class="hero">
+  <div class="hero-text">
+    <div class="position">Theoretical Physicist &middot; JNCASR, Bangalore</div>
+    <h1>Vinayak M. Kulkarni<br><em>PhD</em></h1>
+    <div class="verified">
+      <i class="fa-solid fa-circle-check"></i>
+      Verified email at jncasr.ac.in
+    </div>
+    <div class="hero-badges">
+      <span class="badge">Strongly Correlated Systems</span>
+      <span class="badge">Quantum Many-Body Systems</span>
+      <span class="badge">Mathematical Physics</span>
+      <span class="badge">Renormalisation Group</span>
+      <span class="badge">Non-Hermitian QM</span>
+      <span class="badge">Exceptional Points</span>
+      <span class="badge">Bethe Ansatz</span>
+      <span class="badge">PT Symmetry</span>
+    </div>
+    <p>I develop analytical and computational tools to study emergent phenomena in non-Hermitian quantum impurity systems — including exceptional points, PT symmetry breaking, and non-Fermi liquid fixed points — using renormalization group methods, slave-boson mean-field theory, and biorthogonal Bethe ansatz.</p>
+    <div class="availability">Open to postdoctoral &amp; staff scientist positions</div>
+    <div class="hero-actions">
+      <a href="Resume_Vinayak_M_Kulkarni.pdf" class="btn btn-primary" download>
+        <i class="fa-solid fa-download"></i> Download CV
+      </a>
+      <a href="mailto:vmkphysimath@gmail.com" class="btn">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
+      <a href="https://scholar.google.co.in/citations?hl=en&user=1ZNZRwkAAAAJ" target="_blank" rel="noopener" class="btn">
+        <i class="fa-brands fa-google"></i> Scholar
+      </a>
+      <a href="https://orcid.org/0000-0001-7590-2728" target="_blank" rel="noopener" class="btn">
+        <i class="fa-brands fa-orcid"></i> ORCID
+      </a>
+    </div>
+  </div>
+  <div class="avatar" aria-label="Initials VMK">VMK</div>
+</section>
+
+<!-- METRICS + COLLABORATORS -->
+<section id="metrics">
+  <h2 class="section-title">Citation Metrics</h2>
+  <div class="metrics">
+    <div class="metric"><div class="val">15</div><div class="lbl">Citations</div></div>
+    <div class="metric"><div class="val">2</div><div class="lbl">h-index</div></div>
+    <div class="metric"><div class="val">1</div><div class="lbl">i10-index</div></div>
+    <div class="metric"><div class="val">9</div><div class="lbl">Papers</div></div>
+  </div>
+
+  <h2 class="section-title">Collaborators</h2>
+  <div class="coauthor-grid">
+    <div class="coauthor">
+      <div class="ca-avatar" style="background:#1A3A5C">NSV</div>
+      <div>
+        <div class="ca-name">N. S. Vidhyadhiraja</div>
+        <div class="ca-role">Professor, Theoretical Sciences Unit &middot; JNCASR, Bangalore</div>
+      </div>
+    </div>
+    <div class="coauthor">
+      <div class="ca-avatar" style="background:#0F6E56">SS</div>
+      <div>
+        <div class="ca-name">Sudeshna Sen</div>
+        <div class="ca-role">Assistant Professor &middot; IIT (ISM) Dhanbad</div>
+      </div>
+    </div>
+    <div class="coauthor">
+      <div class="ca-avatar" style="background:#993C1D">SK</div>
+      <div>
+        <div class="ca-name">Sujan K. K.</div>
+        <div class="ca-role">Graduate Student &middot; JNCASR, Bangalore</div>
+      </div>
+    </div>
+    <div class="coauthor">
+      <div class="ca-avatar" style="background:#534AB7">AG</div>
+      <div>
+        <div class="ca-name">Amit Gupta</div>
+        <div class="ca-role">Co-author &middot; PRB 2022</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <h2 class="section-title">Research Interests</h2>
+  <div class="research-grid">
+    <div class="rcard">
+      <div class="icon"><i class="fa-solid fa-atom"></i></div>
+      <h3>Non-Hermitian Quantum Impurity Physics</h3>
+      <p>PT symmetry, exceptional points, and emergent phenomena in driven impurity systems with complex spectra.</p>
+    </div>
+    <div class="rcard">
+      <div class="icon"><i class="fa-solid fa-wave-square"></i></div>
+      <h3>Kondo &amp; Strongly Correlated Systems</h3>
+      <p>Slave-boson mean-field theory, thermodynamic Bethe ansatz, and non-Fermi liquid fixed points.</p>
+    </div>
+    <div class="rcard">
+      <div class="icon"><i class="fa-solid fa-square-root-variable"></i></div>
+      <h3>Mathematical Physics &amp; RG</h3>
+      <p>Biorthogonal quantum mechanics, Yang-Baxter integrability, Puiseux expansions, and RG flows.</p>
+    </div>
+    <div class="rcard">
+      <div class="icon"><i class="fa-solid fa-circle-nodes"></i></div>
+      <h3>Topological &amp; Edge-State Physics</h3>
+      <p>Anderson impurities in topological edge states, cavity-mediated interactions, and symmetry-protected phases.</p>
+    </div>
+    <div class="rcard">
+      <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+      <h3>Non-Equilibrium &amp; Open Quantum Systems</h3>
+      <p>Keldysh field theory, CTQMC, Lindbladian dynamics, and driven quantum dots.</p>
+    </div>
+    <div class="rcard">
+      <div class="icon"><i class="fa-solid fa-table-cells"></i></div>
+      <h3>Dynamical Mean Field Theory</h3>
+      <p>Non-equilibrium DMFT, soft-gap Anderson models, and quantum criticality in lattice Hamiltonians.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <h2 class="section-title">Publications &amp; Preprints</h2>
+  <div class="pub-list">
+
+    <div class="pub">
+      <div class="journal">arXiv &middot; 2026</div>
+      <h3>Yang-Baxter Integrability and Exceptional-Point Structure in Pseudo-Hermitian Quantum Impurity Systems</h3>
+      <div class="meta">VM Kulkarni</div>
+      <div class="pub-foot">
+        <div class="links"><a href="https://arxiv.org/abs/2604.21547" target="_blank" rel="noopener">arXiv:2604.21547</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="journal">arXiv &middot; 2025 &middot; Under Review</div>
+      <h3>Light-Driven Bound State of Interacting Impurities in a Dirac-Like Bath</h3>
+      <div class="meta">VM Kulkarni</div>
+      <div class="pub-foot">
+        <div class="links"><a href="https://doi.org/10.48550/arXiv.2505.17811" target="_blank" rel="noopener">arXiv:2505.17811</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="journal">SciPost Physics &middot; 2025</div>
+      <h3>Anderson Impurities in Edge States with Nonlinear and Dissipative Perturbations</h3>
+      <div class="meta">VM Kulkarni, NS Vidhyadhiraja</div>
+      <div class="pub-foot">
+        <div class="links"><a href="https://scipost.org/SciPostPhys.19.2.036" target="_blank" rel="noopener">SciPost Phys. 19, 036</a></div>
+        <span class="cite-badge">1 citation</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="journal">Physical Review B &middot; 2023</div>
+      <h3>Emergent Soft-Gap Anderson Models at Quantum Criticality in a Lattice Hamiltonian within Dynamical Mean Field Theory</h3>
+      <div class="meta">Sujan K. K., VM Kulkarni, NS Vidhyadhiraja, S Sen</div>
+      <div class="pub-foot">
+        <div class="links"><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.107.205104" target="_blank" rel="noopener">Phys. Rev. B 107, 205104</a></div>
+        <span class="cite-badge">3 citations</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="journal">arXiv &middot; 2023</div>
+      <h3>Anderson Impurities in Edge States with Nonlinear Dispersion</h3>
+      <div class="meta">VM Kulkarni</div>
+      <div class="pub-foot">
+        <div class="links"><a href="https://arxiv.org/abs/2303.10731" target="_blank" rel="noopener">arXiv:2303.10731</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="journal">PhD Thesis &middot; JNCASR &middot; 2023</div>
+      <h3>Renormalization Group Investigations of PT-Symmetric Quantum Many-Body Systems</h3>
+      <div class="meta">VM Kulkarni &middot; Supervisor: Prof. N. S. Vidhyadhiraja &middot; Examiner: Prof. Vikram Tripathi (TIFR)</div>
+    </div>
+
+    <div class="pub">
+      <div class="journal">Physical Review B &middot; 2022</div>
+      <h3>Kondo Effect in a Non-Hermitian PT-Symmetric Anderson Model with Rashba Spin-Orbit Coupling</h3>
+      <div class="meta">VM Kulkarni, A Gupta, NS Vidhyadhiraja</div>
+      <div class="pub-foot">
+        <div class="links"><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.106.075113" target="_blank" rel="noopener">Phys. Rev. B 106, 075113</a></div>
+        <span class="cite-badge">10 citations</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="journal">arXiv &middot; 2022</div>
+      <h3>Derivation of PT-Symmetric Sine-Gordon Model and its Relevance to Non-Equilibrium</h3>
+      <div class="meta">VM Kulkarni</div>
+      <div class="pub-foot">
+        <div class="links"><a href="https://arxiv.org/abs/2211.00333" target="_blank" rel="noopener">arXiv:2211.00333</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="journal">arXiv &middot; 2021</div>
+      <h3>Functional Renormalization Analysis of Bose-Einstein Condensation through Complex Interaction in Harmonic Oscillator</h3>
+      <div class="meta">VM Kulkarni</div>
+      <div class="pub-foot">
+        <div class="links"><a href="https://arxiv.org/abs/2112.03035" target="_blank" rel="noopener">arXiv:2112.03035</a></div>
+        <span class="cite-badge">1 citation</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="edu-list">
+    <div class="edu">
+      <div class="edu-year">2018–2024</div>
+      <div class="edu-body">
+        <h3>PhD in Theoretical Condensed Matter Physics</h3>
+        <p>JNCASR, Bangalore &middot; Supervisor: Prof. N. S. Vidhyadhiraja &middot; Defended Sept 23, 2024 &middot; Examiner: Prof. Vikram Tripathi (TIFR)</p>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-year">2017–2018</div>
+      <div class="edu-body">
+        <h3>Research Assistant</h3>
+        <p>JNCASR, Bangalore &middot; Flow equation method &middot; Supervisor: Prof. N. S. Vidhyadhiraja</p>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-year">2015–2016</div>
+      <div class="edu-body">
+        <h3>Visiting Researcher</h3>
+        <p>IISER Pune &middot; Density functional theory for vacancies and magnetic add-atoms in Boron-Nitride films</p>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-year">2011–2013</div>
+      <div class="edu-body">
+        <h3>M.Sc. in Physics</h3>
+        <p>Karnataka University, Dharwad &middot; GPA 7.9/10</p>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-year">External</div>
+      <div class="edu-body">
+        <h3>M.Sc. in Mathematics</h3>
+        <p>Singhania University, Rajasthan &middot; GPA 8.2/10</p>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-year">2008–2011</div>
+      <div class="edu-body">
+        <h3>B.Sc. in Physics, Mathematics &amp; Electronics</h3>
+        <p>Karnataka University, Dharwad &middot; GPA 8.3/10</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <h2 class="section-title">Fellowships &amp; Awards</h2>
+  <div class="award-list">
+    <div class="award"><span class="award-year">2018</span><span class="award-text">TIFR-GS Fellowship Examination</span></div>
+    <div class="award"><span class="award-year">2013–16</span><span class="award-text">Junior Research Fellowship (JRF) — IISER Pune</span></div>
+    <div class="award"><span class="award-year">2013</span><span class="award-text">Alumni Award for Overall Performance — Karnataka University</span></div>
+    <div class="award"><span class="award-year">2014</span><span class="award-text">GATE — All India Rank 567</span></div>
+    <div class="award"><span class="award-year">2013</span><span class="award-text">NET-JRF in Physical Sciences — All India Rank 291</span></div>
+    <div class="award"><span class="award-year">2013</span><span class="award-text">JEST — All India Rank 108</span></div>
+    <div class="award"><span class="award-year">2015</span><span class="award-text">JEST — All India Rank 562</span></div>
+    <div class="award"><span class="award-year">2010–11</span><span class="award-text">State-Level Scholarship in BSc Mathematics</span></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Analytical Methods</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Poorman Scaling</span>
+        <span class="skill-tag">Schrieffer-Wolff Transformation</span>
+        <span class="skill-tag">Flow Equation RG</span>
+        <span class="skill-tag">Slave-Boson MFT</span>
+        <span class="skill-tag">Bethe Ansatz</span>
+        <span class="skill-tag">Keldysh Field Theory</span>
+        <span class="skill-tag">Open Quantum Systems</span>
+        <span class="skill-tag">Topological Invariants</span>
+        <span class="skill-tag">Large-N Corrections</span>
+        <span class="skill-tag">Yang-Baxter Integrability</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Computational Tools</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Python 3</span>
+        <span class="skill-tag">Fortran 90</span>
+        <span class="skill-tag">OpenMPI</span>
+        <span class="skill-tag">Mathematica</span>
+        <span class="skill-tag">MATLAB</span>
+        <span class="skill-tag">CT-HYB / CT-INT</span>
+        <span class="skill-tag">NRG</span>
+        <span class="skill-tag">DMRG</span>
+        <span class="skill-tag">Quantum ESPRESSO</span>
+        <span class="skill-tag">ALPS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCES -->
+<section id="conferences">
+  <h2 class="section-title">Conferences &amp; Schools</h2>
+  <div class="conf-list">
+    <div class="conf"><span class="conf-year">Dec 2024</span><span class="conf-text">IMPRS-CMS Winter School, Stuttgart</span></div>
+    <div class="conf"><span class="conf-year">Sept 2024</span><span class="conf-text">SFB Q-M and S Summer School &middot; ISTA, Klosterneuburg, Austria</span></div>
+    <div class="conf"><span class="conf-year">Apr 2024</span><span class="conf-text">Carrollian Physics and Holography &middot; ESI, Vienna, Austria</span></div>
+    <div class="conf"><span class="conf-year">Mar 2022</span><span class="conf-text">APS March Meeting &middot; Talk on non-Hermitian Kondo effect &middot; ICTS, Bangalore</span></div>
+    <div class="conf"><span class="conf-year">Oct 2018</span><span class="conf-text">14th JNC Conference on Chemistry of Materials &middot; Poster presentation &middot; Kerala, India</span></div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <h2 class="section-title">News</h2>
+  <div class="news-list">
+    <div class="news-item"><span class="news-date">May 2026</span><span class="news-text">New preprint: Yang-Baxter integrability and exceptional-point structure (<a href="https://arxiv.org/abs/2604.21547" target="_blank" rel="noopener">arXiv:2604.21547</a>).</span></div>
+    <div class="news-item"><span class="news-date">May 2025</span><span class="news-text">Preprint on light-driven bound states of interacting impurities in a Dirac-like bath posted to arXiv.</span></div>
+    <div class="news-item"><span class="news-date">2025</span><span class="news-text">Paper on Anderson impurities in edge states published in <em>SciPost Physics</em>.</span></div>
+    <div class="news-item"><span class="news-date">Sept 2024</span><span class="news-text">PhD thesis defended at JNCASR; examiner Prof. Vikram Tripathi (TIFR).</span></div>
+    <div class="news-item"><span class="news-date">2023</span><span class="news-text">PRB paper on emergent soft-gap Anderson models within DMFT published.</span></div>
+    <div class="news-item"><span class="news-date">2022</span><span class="news-text">PRB paper on the non-Hermitian PT-symmetric Kondo effect with Rashba SOC published; 10 citations to date.</span></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <p style="font-size:14px;color:var(--text2);margin-bottom:1.3rem">I am actively seeking postdoctoral, staff scientist, and faculty positions in condensed matter theory and mathematical physics. Please reach out by email — I am currently based in Vienna, Austria.</p>
+  <div class="contact-grid">
+    <div class="ccard">
+      <div class="icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+      <div><div class="label">Email</div><div class="value"><a href="mailto:vmkphysimath@gmail.com">vmkphysimath@gmail.com</a></div></div>
+    </div>
+    <div class="ccard">
+      <div class="icon-wrap"><i class="fa-solid fa-phone"></i></div>
+      <div><div class="label">Phone</div><div class="value">+43 677 62315905</div></div>
+    </div>
+    <div class="ccard">
+      <div class="icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+      <div><div class="label">Current Location</div><div class="value">Vienna, Austria</div></div>
+    </div>
+    <div class="ccard">
+      <div class="icon-wrap"><i class="fa-solid fa-building-columns"></i></div>
+      <div><div class="label">Home Institution</div><div class="value">JNCASR, Bengaluru, India</div></div>
+    </div>
+    <div class="ccard">
+      <div class="icon-wrap"><i class="fa-brands fa-orcid"></i></div>
+      <div><div class="label">ORCID</div><div class="value"><a href="https://orcid.org/0000-0001-7590-2728" target="_blank" rel="noopener">0000-0001-7590-2728</a></div></div>
+    </div>
+    <div class="ccard">
+      <div class="icon-wrap"><i class="fa-brands fa-google"></i></div>
+      <div><div class="label">Google Scholar</div><div class="value"><a href="https://scholar.google.co.in/citations?hl=en&user=1ZNZRwkAAAAJ" target="_blank" rel="noopener">View profile</a></div></div>
+    </div>
+  </div>
+
+  <h2 class="section-title">References</h2>
+  <div class="ref-grid">
+    <div class="ref-card">
+      <h3>Prof. N. S. Vidhyadhiraja</h3>
+      <div class="ref-role">Professor, Theoretical Sciences Unit<br>JNCASR, Bangalore 560064<br>PhD Supervisor</div>
+      <a href="mailto:nsvraja@gmail.com">nsvraja@gmail.com</a>
+    </div>
+    <div class="ref-card">
+      <h3>Dr. S. S. Kubakaddi</h3>
+      <div class="ref-role">Emeritus Professor, KLE Technological University, Hubballi<br>Former Senior Associate, ICTP Trieste</div>
+      <a href="mailto:sskubakaddi@gmail.com">sskubakaddi@gmail.com</a><br>
+      <a href="mailto:sskubakaddi@kletech.ac.in" style="font-size:12px">sskubakaddi@kletech.ac.in</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Vinayak M. Kulkarni &middot; Theoretical Physics &middot; JNCASR Bangalore &middot;
+  <a href="mailto:vmkphysimath@gmail.com">vmkphysimath@gmail.com</a>
+</footer>
+
+</body>
+</html>
