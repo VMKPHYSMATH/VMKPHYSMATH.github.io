@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vinayak M. Kulkarni — Theoretical Physicist</title>
-  <meta name="description" content="Academic portfolio of Vinayak M. Kulkarni, PhD — theoretical physicist specialising in non-Hermitian quantum mechanics, exceptional points, Kondo physics, and renormalization group methods." />
+  <meta name="description" content="Vinayak M. Kulkarni, PhD: theoretical condensed matter physicist in Vienna. Quantum many-body theory, non-Hermitian physics, integrability, quantum geometry, spectroscopy and reproducible scientific computing." />
+  <meta property="og:title" content="Vinayak M. Kulkarni | Theoretical Condensed Matter Physicist" />
+  <meta property="og:description" content="Exact quantum many-body theory, exceptional points, quantum materials and open research software. Explore research projects and academic CV." />
+  <meta property="og:url" content="https://vmkphysmath.github.io/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -396,6 +399,45 @@
       max-width: 800px;
       margin: 0 auto;
     }
+
+    /* Portfolio 2026: recruiter-first layout, accessible scientific demos */
+    :root { --accent:#173f61; --accent2:#246e9c; --teal:#087e83; }
+    @media(prefers-color-scheme:dark){:root{--accent:#88b6df;--accent2:#8ac9f0;--teal:#63d7cb}}
+    section{max-width:1040px;padding:3.2rem 2rem;scroll-margin-top:90px}
+    .hero{grid-template-columns:minmax(0,1.45fr) minmax(240px,1fr);gap:2.4rem;align-items:center;min-height:420px}
+    .hero-text h1{font-size:clamp(38px,5.5vw,63px);letter-spacing:-.035em}
+    .hero-text .position{color:var(--accent2);font-weight:500}
+    .hero-text p{max-width:650px;font-size:16px}
+    .hero-panel{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--bg2);padding:1rem;box-shadow:0 12px 40px #1234560d}
+    .hero-panel svg{width:100%;height:auto;display:block}
+    .eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:.6rem}
+    .hero-caption{font-size:12px;color:var(--text2);line-height:1.55;margin-top:.5rem}
+    .ep-path{stroke-dasharray:300;stroke-dashoffset:300;animation:trace 2s ease-out forwards}
+    @keyframes trace{to{stroke-dashoffset:0}}
+    .ep-halo{transform-box:fill-box;transform-origin:center;animation:halo 2.6s ease-in-out 2}
+    @keyframes halo{50%{transform:scale(1.45);opacity:.35}}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    .project{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:1.3rem;transition:transform .2s,box-shadow .2s}
+    .project:hover,.project:focus-within{transform:translateY(-3px);box-shadow:0 10px 24px #12345614}
+    .project h3{font-family:var(--serif);font-size:25px;font-weight:500;line-height:1.2;margin:.4rem 0 .8rem}
+    .project p{font-size:14px;color:var(--text2);margin:.55rem 0;line-height:1.65}
+    .project strong{color:var(--text);font-weight:500}
+    .project a{font-size:13px;display:inline-block;margin-top:.6rem;margin-right:1rem}
+    .project .result{border-left:3px solid var(--teal);padding-left:.8rem;color:var(--text)}
+    .intro{font-size:15px;color:var(--text2);max-width:780px;margin:-.7rem 0 1.5rem}
+    .recruiter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin-top:1.5rem}
+    .recruiter-grid div{border-top:2px solid var(--teal);padding:.8rem 0}
+    .recruiter-grid strong{font-size:15px;display:block;margin-bottom:.3rem}
+    .recruiter-grid p{color:var(--text2);font-size:13px}
+    .metric .val{color:var(--accent)}
+    .demo-controls{display:grid;gap:.4rem;margin-top:.8rem}
+    .demo-controls input{width:100%;accent-color:var(--teal)}
+    .demo-controls output{font-size:13px;font-variant-numeric:tabular-nums;color:var(--text)}
+    .news-item,.conf{align-items:flex-start}
+    .btn-primary{background:#173f61;color:white;border-color:#173f61}
+    a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+    @media(max-width:720px){.hero{grid-template-columns:1fr;min-height:0}.project-grid,.recruiter-grid{grid-template-columns:1fr}section{padding:2rem 1.25rem}.hero-panel{max-width:480px}nav{padding:.75rem 1.25rem;position:static}.nav-links{gap:.75rem}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ep-path{stroke-dashoffset:0}}
   </style>
 </head>
 <body>
@@ -404,12 +446,14 @@
   <a href="#about" class="nav-name">Vinayak M. Kulkarni</a>
   <div class="nav-links">
     <a href="#about">About</a>
-    <a href="#research">Research</a>
+    <a href="#projects">Selected Work</a>
+    <a href="#research">Expertise</a>
     <a href="#publications">Publications</a>
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#conferences">Conferences</a>
     <a href="#news">News</a>
+    <a href="cv.html">CV</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -417,11 +461,11 @@
 <!-- HERO / ABOUT -->
 <section id="about" class="hero">
   <div class="hero-text">
-    <div class="position">Theoretical Physicist &middot; JNCASR, Bangalore</div>
+    <div class="position">Theoretical condensed matter physicist &middot; Vienna, Austria</div>
     <h1>Vinayak M. Kulkarni<br><em>PhD</em></h1>
     <div class="verified">
       <i class="fa-solid fa-circle-check"></i>
-      Verified email at jncasr.ac.in
+      PhD, JNCASR &middot; Awarded November 2025
     </div>
     <div class="hero-badges">
       <span class="badge">Strongly Correlated Systems</span>
@@ -433,11 +477,11 @@
       <span class="badge">Bethe Ansatz</span>
       <span class="badge">PT Symmetry</span>
     </div>
-    <p>I develop analytical and computational tools to study emergent phenomena in non-Hermitian quantum impurity systems — including exceptional points, PT symmetry breaking, and non-Fermi liquid fixed points — using renormalization group methods, slave-boson mean-field theory, and biorthogonal Bethe ansatz.</p>
-    <div class="availability">Open to postdoctoral &amp; staff scientist positions</div>
+    <p>I develop exact and computational many-body methods to understand how quantum correlations, dissipation and geometry shape materials and open quantum systems. My work bridges mathematical physics, quantum impurity theory, first-principles electronic structure and experimentally relevant spectroscopy. I pair analytical derivations with reproducible scientific software.</p>
+    <div class="availability">Open to research opportunities and scientific collaborations</div>
     <div class="hero-actions">
-      <a href="Resume_Vinayak_M_Kulkarni.pdf" class="btn btn-primary" download>
-        <i class="fa-solid fa-download"></i> Download CV
+      <a href="cv.html" class="btn btn-primary">
+        <i class="fa-solid fa-file-lines"></i> View / print academic CV
       </a>
       <a href="mailto:vmkphysimath@gmail.com" class="btn">
         <i class="fa-solid fa-envelope"></i> Email
@@ -453,20 +497,54 @@
       </a>
     </div>
   </div>
-  <div class="avatar" aria-label="Initials VMK">VMK</div>
+  <aside class="hero-panel" aria-label="Interactive exceptional point demonstration">
+    <div class="eyebrow">Explore the physics</div>
+    <svg viewBox="0 0 320 206" role="img" aria-labelledby="ep-title ep-desc">
+      <title id="ep-title">Exceptional point in a two-mode model</title><desc id="ep-desc">Two real eigenvalues approach and meet at beta equals one, then become an imaginary pair. Slider changes the coupling parameter.</desc>
+      <g stroke="currentColor" opacity=".18"><path d="M26 92H294 M160 15V170" fill="none"/><path d="M26 170H294" fill="none"/></g>
+      <g font-size="10" fill="currentColor" opacity=".75"><text x="267" y="86">Re E</text><text x="168" y="22">Im E</text><text x="25" y="193">Real pair</text><text x="131" y="193">EP</text><text x="234" y="193">Complex pair</text></g>
+      <path d="M48 92 H160 M272 92 H160" stroke="#2b91d0" stroke-width="2" stroke-linecap="round" class="ep-path" fill="none"/>
+      <path d="M160 92 V20 M160 92 V164" stroke="#159b8d" stroke-width="2" stroke-linecap="round" class="ep-path" fill="none"/>
+      <circle cx="160" cy="92" r="12" fill="none" stroke="#e29a41" stroke-width="2" class="ep-halo"/>
+      <circle cx="160" cy="92" r="3.5" fill="#e29a41"/>
+      <circle id="ep-a" cx="92.8" cy="92" r="6.5" fill="#2b91d0" stroke="var(--bg)" stroke-width="2"/>
+      <circle id="ep-b" cx="227.2" cy="92" r="6.5" fill="#159b8d" stroke="var(--bg)" stroke-width="2"/>
+    </svg>
+    <div class="demo-controls"><label for="ep-beta">Gain/loss parameter &beta; (coupling = 1)</label><input id="ep-beta" type="range" min="0" max="1.4" step="0.01" value="0.8"><output id="ep-value" for="ep-beta">&beta; = 0.80 · E = ±0.60 (real)</output></div>
+    <p class="hero-caption">Illustrative 2 × 2 PT-symmetric model: E = ±√(1 − &beta;²). At &beta; = 1, eigenvalues and eigenvectors coalesce. This simple teaching model is not a numerical result from an interacting impurity.</p>
+    <noscript><p class="hero-caption">Enable JavaScript to move the eigenvalue markers.</p></noscript>
+  </aside>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <h2 class="section-title">News</h2>
+  <div class="news-list">
+    <div class="news-item"><span class="news-date">Nov 2026</span><span class="news-text">Presented a poster at <a href="https://sites.google.com/view/phhqp2026/" target="_blank" rel="noopener">PHHQP 2026</a> in Erice, Italy, on exceptional points in Bethe-ansatz-solvable non-Hermitian impurity models.</span></div>
+    <div class="news-item"><span class="news-date">Aug 2026</span><span class="news-text">Revised preprints on <a href="https://arxiv.org/abs/2505.17811v5" target="_blank" rel="noopener">emergent PT symmetry in a driven Dirac impurity</a> and <a href="https://arxiv.org/abs/2604.21547v3" target="_blank" rel="noopener">Jordan-twist Bethe ansatz</a>, with reproducibility repositories linked in the publications section.</span></div>
+    <div class="news-item"><span class="news-date">July 2026</span><span class="news-text">New preprint with Sharona Horta on quantum weight and low-loss EELS signatures of Wannier quantum geometry in black phosphorus (<a href="https://arxiv.org/abs/2607.08438" target="_blank" rel="noopener">arXiv:2607.08438</a>).</span></div>
+    <div class="news-item"><span class="news-date">Apr 2026</span><span class="news-text">First version of the preprint on Yang-Baxter integrability and exceptional-point structure (<a href="https://arxiv.org/abs/2604.21547" target="_blank" rel="noopener">arXiv:2604.21547</a>).</span></div>
+    <div class="news-item"><span class="news-date">Nov 2025</span><span class="news-text">PhD formally awarded by JNCASR; degree certificate received in November 2025 following the September 2024 defense.</span></div>
+    <div class="news-item"><span class="news-date">May 2025</span><span class="news-text">Preprint on light-driven bound states of interacting impurities in a Dirac-like bath posted to arXiv.</span></div>
+    <div class="news-item"><span class="news-date">2025</span><span class="news-text">Paper on Anderson impurities in edge states published in <em>SciPost Physics</em>.</span></div>
+    <div class="news-item"><span class="news-date">Sept 2024</span><span class="news-text">PhD thesis defended at JNCASR; examiner Prof. Vikram Tripathi (TIFR).</span></div>
+    <div class="news-item"><span class="news-date">2023</span><span class="news-text">PRB paper on emergent soft-gap Anderson models within DMFT published.</span></div>
+    <div class="news-item"><span class="news-date">2022</span><span class="news-text">PRB paper on the non-Hermitian PT-symmetric Kondo effect with Rashba SOC published.</span></div>
+  </div>
 </section>
 
 <!-- METRICS + COLLABORATORS -->
 <section id="metrics">
-  <h2 class="section-title">Citation Metrics</h2>
+  <h2 class="section-title">Research at a glance</h2>
   <div class="metrics">
-    <div class="metric"><div class="val">15</div><div class="lbl">Citations</div></div>
-    <div class="metric"><div class="val">2</div><div class="lbl">h-index</div></div>
-    <div class="metric"><div class="val">1</div><div class="lbl">i10-index</div></div>
-    <div class="metric"><div class="val">10</div><div class="lbl">Listed works</div></div>
+    <div class="metric"><div class="val">3</div><div class="lbl">Peer-reviewed articles</div></div>
+    <div class="metric"><div class="val">2</div><div class="lbl">Featured code repositories</div></div>
+    <div class="metric"><div class="val">2025</div><div class="lbl">PhD awarded</div></div>
+    <div class="metric"><div class="val">2026</div><div class="lbl">Latest conference</div></div>
   </div>
+  <p class="intro">For current citation counts, see <a href="https://scholar.google.co.in/citations?hl=en&amp;user=1ZNZRwkAAAAJ">Google Scholar</a>.</p>
 
-  <h2 class="section-title">Collaborators</h2>
+  <h2 class="section-title">Selected co-authors</h2>
   <div class="coauthor-grid">
     <div class="coauthor">
       <div class="ca-avatar" style="background:#1A3A5C">NSV</div>
@@ -497,6 +575,25 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- SELECTED RESEARCH -->
+<section id="projects">
+  <div class="eyebrow">Research portfolio</div>
+  <h2 class="section-title">From exact models to measurable physics</h2>
+  <p class="intro">Four complementary research directions, each with a physical question, mathematical approach and verifiable output.</p>
+  <div class="project-grid">
+    <article class="project"><div class="eyebrow">01 / Many-body theory · Preprint</div><h3>Many-body exceptional points at finite interaction</h3><p><strong>Question:</strong> Can an interacting quantum impurity retain exact solvability while its eigenstates merge at an exceptional point?</p><p><strong>Approach:</strong> Equal-velocity Anderson impurity, dressed rapidities, Yang–Baxter integrability and a non-diagonalizable boundary twist.</p><p class="result"><strong>Result:</strong> In the specified integrable model, each spin-S multiplet forms a Jordan block of order 2S + 1 at the exceptional point. The construction also connects Bethe-root contraction to Laguerre polynomials and a large-multiplet zero distribution.</p><p>Scope: curvature, unequal velocities and nonscalar channel couplings are outside the theorem.</p><a href="https://arxiv.org/abs/2604.21547">Read preprint ↗</a><a href="https://github.com/VMKPHYSMATH/jordan-twist-finite-u-anderson">Reproduce calculations ↗</a></article>
+    <article class="project"><div class="eyebrow">02 / Open quantum systems · Preprint</div><h3>Emergent non-Hermiticity from Hermitian driving</h3><p><strong>Question:</strong> How can exceptional points appear in a microscopic model with Hermitian dynamics?</p><p><strong>Approach:</strong> Eliminate a driven spin-orbit-coupled bath using causal retarded Green functions; analyze complex resonance poles and impurity response.</p><p class="result"><strong>Result:</strong> A passive effective impurity description supports resonance-pole coalescence in the noninteracting benchmark. Finite-interaction calculations explore how correlations modify it.</p><p>Scope: thermodynamic interacting exceptional-point survival is an open question, not an established result.</p><a href="https://arxiv.org/abs/2505.17811v5">Read preprint ↗</a><a href="https://github.com/VMKPHYSMATH/emergent-pt-dirac-impurity">Code and data ↗</a></article>
+    <article class="project"><div class="eyebrow">03 / Quantum materials · Preprint with Sharona Horta</div><h3>Quantum geometry seen by electron spectroscopy</h3><p><strong>Question:</strong> Can bulk low-loss electron energy-loss spectroscopy reveal the geometry of electronic wavefunctions?</p><p><strong>Approach:</strong> 32-band DFT–Wannier Hamiltonian, analytic momentum derivatives, occupied-band projectors and a restricted spectral sum rule.</p><p class="result"><strong>Result:</strong> The calculated restricted in-plane quantum weight is nearly isotropic in black phosphorus despite strongly anisotropic band masses (armchair/zigzag ratio 0.972 ± 0.005).</p><p>Potential application: connecting first-principles quantum geometry to experimentally accessible spectral moments.</p><a href="https://arxiv.org/abs/2607.08438">Read preprint ↗</a></article>
+    <article class="project"><div class="eyebrow">04 / Strong correlations · Peer-reviewed</div><h3>Kondo physics, criticality and dissipative edge states</h3><p><strong>Question:</strong> How do spin-orbit coupling, bath spectral structure and dissipation alter the screening of quantum impurities?</p><p><strong>Approach:</strong> Renormalization group, slave-boson theory, Anderson impurity models and collaborative dynamical mean-field theory.</p><p class="result"><strong>Outputs:</strong> Peer-reviewed studies on PT-symmetric Rashba Kondo physics (PRB 2022), emergent soft-gap models (PRB 2023) and nonlinear/dissipative edge-state impurities (SciPost 2025).</p><a href="https://doi.org/10.1103/PhysRevB.106.075113">Kondo physics ↗</a><a href="https://doi.org/10.1103/PhysRevB.107.205104">Quantum criticality ↗</a><a href="https://scipost.org/SciPostPhys.19.2.036">Edge states ↗</a></article>
+  </div>
+  <div class="recruiter-grid">
+    <div><strong>Analytical problem solving</strong><p>Exact solutions, symmetry, RG, Green functions, spectral and operator methods.</p></div>
+    <div><strong>Computational research</strong><p>Python, Julia, high-precision linear algebra, DFT–Wannier response, validation workflows.</p></div>
+    <div><strong>Open and collaborative science</strong><p>Documented code, reproducibility archives, manuscript development and research communication.</p></div>
+  </div>
+  <p class="intro" style="margin:1.1rem 0 0"><strong>Developing directions:</strong> interacting non-Hermitian solvers and formalizing selected mathematical statements in Lean 4. These are ongoing projects rather than fully certified results.</p>
 </section>
 
 <!-- RESEARCH -->
@@ -579,7 +676,6 @@
       <div class="meta">VM Kulkarni, NS Vidhyadhiraja</div>
       <div class="pub-foot">
         <div class="links"><a href="https://scipost.org/SciPostPhys.19.2.036" target="_blank" rel="noopener">SciPost Phys. 19, 036</a></div>
-        <span class="cite-badge">1 citation</span>
       </div>
     </div>
 
@@ -589,7 +685,6 @@
       <div class="meta">Sujan K. K., VM Kulkarni, NS Vidhyadhiraja, S Sen</div>
       <div class="pub-foot">
         <div class="links"><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.107.205104" target="_blank" rel="noopener">Phys. Rev. B 107, 205104</a></div>
-        <span class="cite-badge">3 citations</span>
       </div>
     </div>
 
@@ -603,7 +698,7 @@
     </div>
 
     <div class="pub">
-      <div class="journal">PhD Thesis &middot; JNCASR &middot; 2023</div>
+      <div class="journal">PhD Thesis &middot; JNCASR &middot; Defended 2024</div>
       <h3>Renormalization Group Investigations of PT-Symmetric Quantum Many-Body Systems</h3>
       <div class="meta">VM Kulkarni &middot; Supervisor: Prof. N. S. Vidhyadhiraja &middot; Examiner: Prof. Vikram Tripathi (TIFR)</div>
     </div>
@@ -614,7 +709,6 @@
       <div class="meta">VM Kulkarni, A Gupta, NS Vidhyadhiraja</div>
       <div class="pub-foot">
         <div class="links"><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.106.075113" target="_blank" rel="noopener">Phys. Rev. B 106, 075113</a></div>
-        <span class="cite-badge">10 citations</span>
       </div>
     </div>
 
@@ -633,7 +727,6 @@
       <div class="meta">VM Kulkarni</div>
       <div class="pub-foot">
         <div class="links"><a href="https://arxiv.org/abs/2112.03035" target="_blank" rel="noopener">arXiv:2112.03035</a></div>
-        <span class="cite-badge">1 citation</span>
       </div>
     </div>
 
@@ -642,13 +735,14 @@
 
 <!-- EDUCATION -->
 <section id="education">
-  <h2 class="section-title">Education</h2>
+  <h2 class="section-title">Education &amp; Research Experience</h2>
   <div class="edu-list">
+    <div class="edu"><div class="edu-year">2024–present</div><div class="edu-body"><h3>Independent research</h3><p>Vienna, Austria &middot; Quantum many-body theory, open systems, quantum materials and reproducible research software.</p></div></div>
     <div class="edu">
-      <div class="edu-year">2018–2024</div>
+      <div class="edu-year">2018–2025</div>
       <div class="edu-body">
         <h3>PhD in Theoretical Condensed Matter Physics</h3>
-        <p>JNCASR, Bangalore &middot; Supervisor: Prof. N. S. Vidhyadhiraja &middot; Defended Sept 23, 2024 &middot; Examiner: Prof. Vikram Tripathi (TIFR)</p>
+        <p>JNCASR, Bangalore &middot; Supervisor: Prof. N. S. Vidhyadhiraja &middot; Thesis defended 23 September 2024 &middot; Degree awarded and certificate received November 2025 &middot; Examiner: Prof. Vikram Tripathi (TIFR)</p>
       </div>
     </div>
     <div class="edu">
@@ -726,7 +820,12 @@
     <div class="skill-group">
       <h3>Computational Tools</h3>
       <div class="skill-tags">
-        <span class="skill-tag">Python 3</span>
+        <span class="skill-tag">Python / NumPy / SciPy</span>
+        <span class="skill-tag">Julia</span>
+        <span class="skill-tag">SymPy / mpmath</span>
+        <span class="skill-tag">Wannier90</span>
+        <span class="skill-tag">Git / GitHub</span>
+        <span class="skill-tag">Lean 4 (ongoing)</span>
         <span class="skill-tag">Fortran 90</span>
         <span class="skill-tag">OpenMPI</span>
         <span class="skill-tag">Mathematica</span>
@@ -745,7 +844,7 @@
 <section id="conferences">
   <h2 class="section-title">Conferences &amp; Schools</h2>
   <div class="conf-list">
-    <div class="conf"><span class="conf-year">Nov 2026</span><span class="conf-text"><a href="https://sites.google.com/view/phhqp2026/" target="_blank" rel="noopener">PHHQP 2026 — Pseudo-Hermitian Hamiltonians and Quantum Physics</a> &middot; Ettore Majorana Foundation and Centre for Scientific Culture, Erice, Italy &middot; Poster presentation on exceptional points in Bethe-ansatz-solvable non-Hermitian impurity models.</span></div>
+    <div class="conf"><span class="conf-year">16–20 Nov 2026</span><span class="conf-text"><a href="https://sites.google.com/view/phhqp2026/" target="_blank" rel="noopener">PHHQP 2026 — Pseudo-Hermitian Hamiltonians and Quantum Physics</a> &middot; Ettore Majorana Foundation and Centre for Scientific Culture, Erice, Italy &middot; Poster presentation on exceptional points in Bethe-ansatz-solvable non-Hermitian impurity models.</span></div>
     <div class="conf"><span class="conf-year">Dec 2024</span><span class="conf-text">IMPRS-CMS Winter School, Stuttgart</span></div>
     <div class="conf"><span class="conf-year">Sept 2024</span><span class="conf-text">SFB Q-M and S Summer School &middot; ISTA, Klosterneuburg, Austria</span></div>
     <div class="conf"><span class="conf-year">Apr 2024</span><span class="conf-text">Carrollian Physics and Holography &middot; ESI, Vienna, Austria</span></div>
@@ -754,26 +853,12 @@
   </div>
 </section>
 
-<!-- NEWS -->
-<section id="news">
-  <h2 class="section-title">News</h2>
-  <div class="news-list">
-    <div class="news-item"><span class="news-date">Nov 2026</span><span class="news-text">Presented a poster at <a href="https://sites.google.com/view/phhqp2026/" target="_blank" rel="noopener">PHHQP 2026</a> in Erice, Italy, on exceptional points in Bethe-ansatz-solvable non-Hermitian impurity models.</span></div>
-    <div class="news-item"><span class="news-date">Aug 2026</span><span class="news-text">Revised preprints on <a href="https://arxiv.org/abs/2505.17811v5" target="_blank" rel="noopener">emergent PT symmetry in a driven Dirac impurity</a> and <a href="https://arxiv.org/abs/2604.21547v3" target="_blank" rel="noopener">Jordan-twist Bethe ansatz</a>, with reproducibility repositories linked in the publications section.</span></div>
-    <div class="news-item"><span class="news-date">July 2026</span><span class="news-text">New preprint with Sharona Horta on quantum weight and low-loss EELS signatures of Wannier quantum geometry in black phosphorus (<a href="https://arxiv.org/abs/2607.08438" target="_blank" rel="noopener">arXiv:2607.08438</a>).</span></div>
-    <div class="news-item"><span class="news-date">Apr 2026</span><span class="news-text">First version of the preprint on Yang-Baxter integrability and exceptional-point structure (<a href="https://arxiv.org/abs/2604.21547" target="_blank" rel="noopener">arXiv:2604.21547</a>).</span></div>
-    <div class="news-item"><span class="news-date">May 2025</span><span class="news-text">Preprint on light-driven bound states of interacting impurities in a Dirac-like bath posted to arXiv.</span></div>
-    <div class="news-item"><span class="news-date">2025</span><span class="news-text">Paper on Anderson impurities in edge states published in <em>SciPost Physics</em>.</span></div>
-    <div class="news-item"><span class="news-date">Sept 2024</span><span class="news-text">PhD thesis defended at JNCASR; examiner Prof. Vikram Tripathi (TIFR).</span></div>
-    <div class="news-item"><span class="news-date">2023</span><span class="news-text">PRB paper on emergent soft-gap Anderson models within DMFT published.</span></div>
-    <div class="news-item"><span class="news-date">2022</span><span class="news-text">PRB paper on the non-Hermitian PT-symmetric Kondo effect with Rashba SOC published; 10 citations to date.</span></div>
-  </div>
-</section>
+
 
 <!-- CONTACT -->
 <section id="contact">
   <h2 class="section-title">Contact</h2>
-  <p style="font-size:14px;color:var(--text2);margin-bottom:1.3rem">I am actively seeking postdoctoral, staff scientist, and faculty positions in condensed matter theory and mathematical physics. Please reach out by email — I am currently based in Vienna, Austria.</p>
+  <p style="font-size:14px;color:var(--text2);margin-bottom:1.3rem">I welcome enquiries about research positions and scientific collaborations in condensed matter theory, mathematical physics, quantum materials and scientific computing. Please reach out by email. I am based in Vienna, Austria.</p>
   <div class="contact-grid">
     <div class="ccard">
       <div class="icon-wrap"><i class="fa-solid fa-envelope"></i></div>
@@ -789,7 +874,7 @@
     </div>
     <div class="ccard">
       <div class="icon-wrap"><i class="fa-solid fa-building-columns"></i></div>
-      <div><div class="label">Home Institution</div><div class="value">JNCASR, Bengaluru, India</div></div>
+      <div><div class="label">Doctoral Institution</div><div class="value">JNCASR, Bengaluru, India</div></div>
     </div>
     <div class="ccard">
       <div class="icon-wrap"><i class="fa-brands fa-orcid"></i></div>
@@ -818,9 +903,16 @@
 </section>
 
 <footer>
-  &copy; 2026 Vinayak M. Kulkarni &middot; Theoretical Physics &middot; JNCASR Bangalore &middot;
+  &copy; 2026 Vinayak M. Kulkarni &middot; Theoretical Condensed Matter Physics &middot; Vienna, Austria &middot;
   <a href="mailto:vmkphysimath@gmail.com">vmkphysimath@gmail.com</a>
 </footer>
 
+<script>
+(() => {
+  const input=document.getElementById('ep-beta'), a=document.getElementById('ep-a'), b=document.getElementById('ep-b'), out=document.getElementById('ep-value');
+  const update=()=>{const beta=Number(input.value), d=1-beta*beta, n=Math.sqrt(Math.abs(d)), x=d>=0?112*n:0,y=d<0?72*n:0; a.setAttribute('cx',160-x); b.setAttribute('cx',160+x); a.setAttribute('cy',92-y); b.setAttribute('cy',92+y); out.textContent='β = '+beta.toFixed(2)+' · E = '+(Math.abs(d)<1e-10?'0 (exceptional point)': '±'+n.toFixed(2)+(d<0?'i (complex pair)':' (real pair)'));};
+  input.addEventListener('input',update);update();
+})();
+</script>
 </body>
 </html>
